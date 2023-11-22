@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 
 // <========== icons ==========>
@@ -21,7 +21,23 @@ import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined
 // <========== images ==========>
 import Image from "next/image";
 
-const Header = () => {
+// <========== Components ==========>
+import LoginForm from "./LoginForm";
+import RegisterForm from "./RegisterForm";
+
+const Header: React.FC = () => {
+  const [login, setLogin] = useState(true);
+
+  const loginModel = (field:string) =>{
+    if(login === false && field === "login"){
+      setLogin(true)
+    }
+    else if(login === true && field === "reg"){
+      setLogin(false)
+    }
+
+  }
+
   return (
     <div className="">
       <div className="top-head hidden  lg:inline-flex justify-center bg-[#029E9D] h-10 w-full text-white">
@@ -385,6 +401,7 @@ const Header = () => {
                     Login / Register
                   </Link>
                 </li>
+
                 <li>
                   <Link
                     className="rounded-t bg-white hover:bg-[#868686] hover:text-white py-2 px-4 block whitespace-no-wrap"
@@ -544,8 +561,34 @@ const Header = () => {
             <div className="hidden xl:inline-flex items-center gap-2">
               <span className="text-[#868686] mr-4 text-[15px]">
                 <PersonOutlineOutlinedIcon className="mb-[7px] " />
-                LOGIN/REGISTER
+                <a href="#my_modal_8" className="">
+                  LOGIN/REGISTER
+                </a>
               </span>
+            </div>
+
+            {/* Put this part before </body> tag */}
+            <div className="modal " role="dialog" id="my_modal_8">
+              <div className=" bg-white rounded-md p-[15px] w-[90%] md:w-[80%] lg:w-[60%]">
+                <div className="flex gap-3 w-full mb-[20px]">
+                  <button className={`bg-white border text-16px border-[#f1f1f1] rounded-xl  w-full model-btn ${login ? "bg-model":null}`} onClick={()=>{loginModel("login")}}>
+                    Login
+                  </button>
+                  <button className={`bg-white border text-16px border-[#f1f1f1] rounded-xl  w-full model-btn ${!login ? "bg-model":null}`} onClick={()=>{loginModel("reg")}}>
+                    Register
+                  </button>
+                </div>
+
+                {login ? (
+                  <div className="duration-75">
+                    <LoginForm onChildClick={loginModel}/>
+                  </div>
+                ) : (
+                  <div className="duration-75">
+                    <RegisterForm onChildClick={loginModel} />
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>

@@ -23,9 +23,10 @@ import React from "react";
 
 const Footer = () => {
   const [windowWidth, setWindowWidth] = useState(4);
-  let screenWidth = window.innerWidth;
 
-  useEffect(() => {
+  const updateWindowWidth = () => {
+    const screenWidth = window.innerWidth;
+
     if (425 >= screenWidth) {
       setWindowWidth(2);
     } else if (768 >= screenWidth) {
@@ -35,7 +36,19 @@ const Footer = () => {
     } else {
       setWindowWidth(8);
     }
-  }, [screenWidth]);
+  };
+
+  useEffect(() => {
+    
+    updateWindowWidth();
+
+    window.addEventListener('resize', updateWindowWidth);
+
+    
+    return () => {
+      window.removeEventListener('resize', updateWindowWidth);
+    };
+  }, []); 
 
   return (
     <div>
@@ -64,7 +77,7 @@ const Footer = () => {
       </div>
 
       <div className=" w-full flex flex-col items-center p-4 bg-[#17233E]">
-        <div className="w-full lg:max-w-[1290px] grid grid-cols-1 ">
+        <div className="w-full lg:max-w-[1290px] grid grid-cols-1 bg-[#17233E]">
           {/* carousel */}
 
           <div className="bg-[#17233E] h-[131px] md:h-[195px] lg:h-[97px] xl:h-[135px] ">
@@ -74,7 +87,7 @@ const Footer = () => {
               centeredSlides={false}
               loop={true}
               autoplay={{
-                delay: 1000,
+                delay: 100000,
                 disableOnInteraction: false,
               }}
               pagination={{
@@ -84,170 +97,171 @@ const Footer = () => {
               modules={[Autoplay, Pagination, Navigation]}
               className="mySwiper"
             >
-              <SwiperSlide className="flex justify-center img-radius  ">
-                <div className="image-box img-radius ">
+              
+              <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
+              
                   <Image
-                    className="image img-radius h-[100px] bg-[#17233E]"
-                    src="/images/footer-image/footer1.jpg"
-                    alt=""
-                    width={1000}
-                    height={10}
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className="flex justify-center img-radius ">
-                <div className="image-box img-radius ">
-                  <Image
-                    className="image img-radius h-[100px] bg-[#17233E]"
-                    src="/images/footer-image/footer2.jpg"
-                    alt=""
-                    width={1000}
-                    height={10}
-                  />
-                </div>{" "}
-              </SwiperSlide>
-              <SwiperSlide className="flex justify-center img-radius ">
-                <div className="image-box img-radius ">
-                  <Image
-                    className="image img-radius h-[100px] bg-[#17233E]"
-                    src="/images/footer-image/footer7.jpg"
-                    alt=""
-                    width={1000}
-                    height={10}
-                  />
-                </div>{" "}
-              </SwiperSlide>
-              <SwiperSlide className="flex justify-center img-radius ">
-                <div className="image-box img-radius ">
-                  <Image
-                    className="image img-radius h-[100px] bg-[#17233E]"
-                    src="/images/footer-image/footer3.jpg"
-                    alt=""
-                    width={1000}
-                    height={10}
-                  />
-                </div>{" "}
-              </SwiperSlide>
-              <SwiperSlide className="flex justify-center img-radius ">
-                <div className="image-box img-radius ">
-                  <Image
-                    className="image img-radius h-[100px] bg-[#17233E]"
-                    src="/images/footer-image/footer4.jpg"
-                    alt=""
-                    width={1000}
-                    height={10}
-                  />
-                </div>{" "}
-              </SwiperSlide>
-              <SwiperSlide className="flex justify-center img-radius ">
-                <div className="image-box img-radius ">
-                  <Image
-                    className="image img-radius h-[100px] bg-[#17233E]"
+                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
                     src="/images/footer-image/footer5.jpg"
                     alt=""
                     width={1000}
                     height={10}
                   />
-                </div>{" "}
+                {" "}
               </SwiperSlide>
-              <SwiperSlide className="flex justify-center img-radius ">
-                <div className="image-box img-radius ">
+              <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
+              
                   <Image
-                    className="image img-radius h-[100px] bg-[#17233E]"
-                    src="/images/footer-image/footer6.jpg"
-                    alt=""
-                    width={1000}
-                    height={10}
-                  />
-                </div>{" "}
-              </SwiperSlide>
-              <SwiperSlide className="flex justify-center img-radius ">
-                <div className="image-box img-radius ">
-                  <Image
-                    className="image img-radius h-[100px] bg-[#17233E]"
-                    src="/images/footer-image/footer7.jpg"
-                    alt=""
-                    width={1000}
-                    height={10}
-                  />
-                </div>{" "}
-              </SwiperSlide>
-              <SwiperSlide className="flex justify-center img-radius ">
-                <div className="image-box img-radius ">
-                  <Image
-                    className="image img-radius h-[100px] bg-[#17233E]"
-                    src="/images/footer-image/footer8.jpg"
-                    alt=""
-                    width={1000}
-                    height={10}
-                  />
-                </div>{" "}
-              </SwiperSlide>
-              <SwiperSlide className="flex justify-center img-radius ">
-                <div className="image-box img-radius ">
-                  <Image
-                    className="image img-radius h-[100px] bg-[#17233E]"
-                    src="/images/footer-image/footer9.jpg"
-                    alt=""
-                    width={1000}
-                    height={10}
-                  />
-                </div>{" "}
-              </SwiperSlide>
-              <SwiperSlide className="flex justify-center img-radius ">
-                <div className="image-box img-radius ">
-                  <Image
-                    className="image img-radius h-[100px] bg-[#17233E]"
-                    src="/images/footer-image/footer1.jpg"
-                    alt=""
-                    width={1000}
-                    height={10}
-                  />
-                </div>{" "}
-              </SwiperSlide>
-              <SwiperSlide className="flex justify-center img-radius ">
-                <div className="image-box img-radius ">
-                  <Image
-                    className="image img-radius h-[100px] bg-[#17233E]"
-                    src="/images/footer-image/footer2.jpg"
-                    alt=""
-                    width={1000}
-                    height={10}
-                  />
-                </div>{" "}
-              </SwiperSlide>
-              <SwiperSlide className="flex justify-center img-radius ">
-                <div className="image-box img-radius ">
-                  <Image
-                    className="image img-radius h-[100px] bg-[#17233E]"
-                    src="/images/footer-image/footer3.jpg"
-                    alt=""
-                    width={1000}
-                    height={10}
-                  />
-                </div>{" "}
-              </SwiperSlide>
-              <SwiperSlide className="flex justify-center img-radius ">
-                <div className="image-box img-radius ">
-                  <Image
-                    className="image img-radius h-[100px] bg-[#17233E]"
-                    src="/images/footer-image/footer4.jpg"
-                    alt=""
-                    width={1000}
-                    height={10}
-                  />
-                </div>{" "}
-              </SwiperSlide>
-              <SwiperSlide className="flex justify-center img-radius ">
-                <div className="image-box img-radius ">
-                  <Image
-                    className="image img-radius h-[100px] bg-[#17233E]"
+                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
                     src="/images/footer-image/footer5.jpg"
                     alt=""
                     width={1000}
                     height={10}
                   />
-                </div>{" "}
+                {" "}
+              </SwiperSlide>
+              <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
+              
+                  <Image
+                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
+                    src="/images/footer-image/footer5.jpg"
+                    alt=""
+                    width={1000}
+                    height={10}
+                  />
+                {" "}
+              </SwiperSlide>
+              <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
+              
+                  <Image
+                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
+                    src="/images/footer-image/footer5.jpg"
+                    alt=""
+                    width={1000}
+                    height={10}
+                  />
+                {" "}
+              </SwiperSlide>
+              <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
+              
+                  <Image
+                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
+                    src="/images/footer-image/footer5.jpg"
+                    alt=""
+                    width={1000}
+                    height={10}
+                  />
+                {" "}
+              </SwiperSlide>
+              <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
+              
+                  <Image
+                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
+                    src="/images/footer-image/footer5.jpg"
+                    alt=""
+                    width={1000}
+                    height={10}
+                  />
+                {" "}
+              </SwiperSlide>
+              <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
+              
+                  <Image
+                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
+                    src="/images/footer-image/footer5.jpg"
+                    alt=""
+                    width={1000}
+                    height={10}
+                  />
+                {" "}
+              </SwiperSlide>
+              <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
+              
+                  <Image
+                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
+                    src="/images/footer-image/footer5.jpg"
+                    alt=""
+                    width={1000}
+                    height={10}
+                  />
+                {" "}
+              </SwiperSlide>
+              <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
+              
+                  <Image
+                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
+                    src="/images/footer-image/footer5.jpg"
+                    alt=""
+                    width={1000}
+                    height={10}
+                  />
+                {" "}
+              </SwiperSlide>
+              <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
+              
+                  <Image
+                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
+                    src="/images/footer-image/footer5.jpg"
+                    alt=""
+                    width={1000}
+                    height={10}
+                  />
+                {" "}
+              </SwiperSlide>
+              <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
+              
+                  <Image
+                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
+                    src="/images/footer-image/footer5.jpg"
+                    alt=""
+                    width={1000}
+                    height={10}
+                  />
+                {" "}
+              </SwiperSlide>
+              <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
+              
+                  <Image
+                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
+                    src="/images/footer-image/footer5.jpg"
+                    alt=""
+                    width={1000}
+                    height={10}
+                  />
+                {" "}
+              </SwiperSlide>
+              <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
+              
+                  <Image
+                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
+                    src="/images/footer-image/footer5.jpg"
+                    alt=""
+                    width={1000}
+                    height={10}
+                  />
+                {" "}
+              </SwiperSlide>
+              <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
+              
+                  <Image
+                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
+                    src="/images/footer-image/footer5.jpg"
+                    alt=""
+                    width={1000}
+                    height={10}
+                  />
+                {" "}
+              </SwiperSlide>
+              <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
+              
+                  <Image
+                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
+                    src="/images/footer-image/footer5.jpg"
+                    alt=""
+                    width={1000}
+                    height={10}
+                  />
+                {" "}
               </SwiperSlide>
             </Swiper>
             <div className="flex justify-center relative z-10 top-[-70%] md:top-[-60%] lg:top-[-70%] xl:top-[-60%] outline-[3px] outline-black   m-[2px]">
