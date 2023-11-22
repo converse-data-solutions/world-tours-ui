@@ -1,18 +1,17 @@
 import React from "react";
 // <========== images ==========>
 import Image from "next/image";
-import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
-import GoogleIcon from '@mui/icons-material/Google';
+import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
+import GoogleIcon from "@mui/icons-material/Google";
 
 interface ChildProps {
-    onChildClick: (value: string) => void;
-  }
+  onChildClick: (value: string) => void;
+}
 
-const RegisterForm: React.FC<ChildProps> = ({onChildClick}) => {
-
-    const loginModel = (val:string) =>{
-        onChildClick(val)
-    }
+const RegisterForm: React.FC<ChildProps> = ({ onChildClick }) => {
+  const loginModel = (val: string) => {
+    onChildClick(val);
+  };
 
   return (
     <div className="flex flex-col lg:flex-row w-full">
@@ -30,14 +29,21 @@ const RegisterForm: React.FC<ChildProps> = ({onChildClick}) => {
           Register
         </h3>
         <div className="flex justify-between">
-        <button className="text-[14px] bg-[#506DAB] rounded-xl text-white model-btn">
-                        <span><FacebookOutlinedIcon style={{fontSize:"20"}} className="mr-2"/></span>
-                        <span>Login with facebook</span>
-                      </button>
-                      <button className="text-[14px] bg-[#DD4B39] rounded-xl text-white model-btn">
-                        <span><GoogleIcon  style={{fontSize:"18"}} className="mr-2"/></span>
-                        <span>Login with google</span>
-                      </button>
+          <button className="text-[14px] bg-[#506DAB] rounded-xl text-white model-btn">
+            <span>
+              <FacebookOutlinedIcon
+                style={{ fontSize: "20" }}
+                className="mr-2"
+              />
+            </span>
+            <span>Login with facebook</span>
+          </button>
+          <button className="text-[14px] bg-[#DD4B39] rounded-xl text-white model-btn">
+            <span>
+              <GoogleIcon style={{ fontSize: "18" }} className="mr-2" />
+            </span>
+            <span>Login with google</span>
+          </button>
         </div>
         <div className="flex my-4">
           <div className="w-full self-center">
@@ -76,17 +82,23 @@ const RegisterForm: React.FC<ChildProps> = ({onChildClick}) => {
               <input type="checkbox" />
               <span>I have read and accept the Terms and Privacy Policy?</span>
             </div>
-           
           </div>
           <div className="flex justify-center text-[#777777]">
             <button className="bg-[#029e9d] text-white border text-16px border-[#f1f1f1] rounded-xl  w-full model-btn">
-            Register
+              Register
             </button>
           </div>
         </form>
         <h3 className="text-center text-[#777777] text-[16px]">
-        Already have an account?{" "}
-          <span className="text-[#029e9d]" onClick={()=>{loginModel("login")}}>Login</span>
+          Already have an account?{" "}
+          <span
+            className="text-[#029e9d]"
+            onClick={() => {
+              loginModel("login");
+            }}
+          >
+            Login
+          </span>
         </h3>
       </div>
     </div>

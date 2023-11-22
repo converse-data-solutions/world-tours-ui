@@ -28,15 +28,13 @@ import RegisterForm from "./RegisterForm";
 const Header: React.FC = () => {
   const [login, setLogin] = useState(true);
 
-  const loginModel = (field:string) =>{
-    if(login === false && field === "login"){
-      setLogin(true)
+  const loginModel = (field: string) => {
+    if (login === false && field === "login") {
+      setLogin(true);
+    } else if (login === true && field === "reg") {
+      setLogin(false);
     }
-    else if(login === true && field === "reg"){
-      setLogin(false)
-    }
-
-  }
+  };
 
   return (
     <div className="">
@@ -571,17 +569,31 @@ const Header: React.FC = () => {
             <div className="modal " role="dialog" id="my_modal_8">
               <div className=" bg-white rounded-md p-[15px] w-[90%] md:w-[80%] lg:w-[60%]">
                 <div className="flex gap-3 w-full mb-[20px]">
-                  <button className={`bg-white border text-16px border-[#f1f1f1] rounded-xl  w-full model-btn ${login ? "bg-model":null}`} onClick={()=>{loginModel("login")}}>
+                  <button
+                    className={`bg-white border text-16px border-[#f1f1f1] rounded-xl  w-full model-btn ${
+                      login ? "bg-model" : null
+                    }`}
+                    onClick={() => {
+                      loginModel("login");
+                    }}
+                  >
                     Login
                   </button>
-                  <button className={`bg-white border text-16px border-[#f1f1f1] rounded-xl  w-full model-btn ${!login ? "bg-model":null}`} onClick={()=>{loginModel("reg")}}>
+                  <button
+                    className={`bg-white border text-16px border-[#f1f1f1] rounded-xl  w-full model-btn ${
+                      !login ? "bg-model" : null
+                    }`}
+                    onClick={() => {
+                      loginModel("reg");
+                    }}
+                  >
                     Register
                   </button>
                 </div>
 
                 {login ? (
                   <div className="duration-75">
-                    <LoginForm onChildClick={loginModel}/>
+                    <LoginForm onChildClick={loginModel} />
                   </div>
                 ) : (
                   <div className="duration-75">

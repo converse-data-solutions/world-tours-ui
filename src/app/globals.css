@@ -316,7 +316,7 @@ body {
   }
 }
 
-.model-btn{
+.model-btn {
   padding: 14px 18px;
 }
 
@@ -500,7 +500,7 @@ option {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap:1;
+  gap: 1;
 }
 
 .slider {
@@ -923,7 +923,7 @@ i {
   padding: 10px;
 }
 
-.bg-model{
+.bg-model {
   background-color: #029e9d;
   color: white;
 }

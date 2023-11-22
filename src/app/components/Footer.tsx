@@ -39,16 +39,14 @@ const Footer = () => {
   };
 
   useEffect(() => {
-    
     updateWindowWidth();
 
-    window.addEventListener('resize', updateWindowWidth);
+    window.addEventListener("resize", updateWindowWidth);
 
-    
     return () => {
-      window.removeEventListener('resize', updateWindowWidth);
+      window.removeEventListener("resize", updateWindowWidth);
     };
-  }, []); 
+  }, []);
 
   return (
     <div>
@@ -97,171 +95,140 @@ const Footer = () => {
               modules={[Autoplay, Pagination, Navigation]}
               className="mySwiper"
             >
-              
               <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
-              
-                  <Image
-                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
-                    src="/images/footer-image/footer5.jpg"
-                    alt=""
-                    width={1000}
-                    height={10}
-                  />
-                {" "}
+                <Image
+                  className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
+                  src="/images/footer-image/footer5.jpg"
+                  alt=""
+                  width={1000}
+                  height={10}
+                />{" "}
               </SwiperSlide>
               <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
-              
-                  <Image
-                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
-                    src="/images/footer-image/footer5.jpg"
-                    alt=""
-                    width={1000}
-                    height={10}
-                  />
-                {" "}
+                <Image
+                  className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
+                  src="/images/footer-image/footer5.jpg"
+                  alt=""
+                  width={1000}
+                  height={10}
+                />{" "}
               </SwiperSlide>
               <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
-              
-                  <Image
-                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
-                    src="/images/footer-image/footer5.jpg"
-                    alt=""
-                    width={1000}
-                    height={10}
-                  />
-                {" "}
+                <Image
+                  className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
+                  src="/images/footer-image/footer5.jpg"
+                  alt=""
+                  width={1000}
+                  height={10}
+                />{" "}
               </SwiperSlide>
               <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
-              
-                  <Image
-                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
-                    src="/images/footer-image/footer5.jpg"
-                    alt=""
-                    width={1000}
-                    height={10}
-                  />
-                {" "}
+                <Image
+                  className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
+                  src="/images/footer-image/footer5.jpg"
+                  alt=""
+                  width={1000}
+                  height={10}
+                />{" "}
               </SwiperSlide>
               <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
-              
-                  <Image
-                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
-                    src="/images/footer-image/footer5.jpg"
-                    alt=""
-                    width={1000}
-                    height={10}
-                  />
-                {" "}
+                <Image
+                  className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
+                  src="/images/footer-image/footer5.jpg"
+                  alt=""
+                  width={1000}
+                  height={10}
+                />{" "}
               </SwiperSlide>
               <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
-              
-                  <Image
-                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
-                    src="/images/footer-image/footer5.jpg"
-                    alt=""
-                    width={1000}
-                    height={10}
-                  />
-                {" "}
+                <Image
+                  className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
+                  src="/images/footer-image/footer5.jpg"
+                  alt=""
+                  width={1000}
+                  height={10}
+                />{" "}
               </SwiperSlide>
               <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
-              
-                  <Image
-                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
-                    src="/images/footer-image/footer5.jpg"
-                    alt=""
-                    width={1000}
-                    height={10}
-                  />
-                {" "}
+                <Image
+                  className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
+                  src="/images/footer-image/footer5.jpg"
+                  alt=""
+                  width={1000}
+                  height={10}
+                />{" "}
               </SwiperSlide>
               <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
-              
-                  <Image
-                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
-                    src="/images/footer-image/footer5.jpg"
-                    alt=""
-                    width={1000}
-                    height={10}
-                  />
-                {" "}
+                <Image
+                  className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
+                  src="/images/footer-image/footer5.jpg"
+                  alt=""
+                  width={1000}
+                  height={10}
+                />{" "}
               </SwiperSlide>
               <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
-              
-                  <Image
-                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
-                    src="/images/footer-image/footer5.jpg"
-                    alt=""
-                    width={1000}
-                    height={10}
-                  />
-                {" "}
+                <Image
+                  className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
+                  src="/images/footer-image/footer5.jpg"
+                  alt=""
+                  width={1000}
+                  height={10}
+                />{" "}
               </SwiperSlide>
               <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
-              
-                  <Image
-                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
-                    src="/images/footer-image/footer5.jpg"
-                    alt=""
-                    width={1000}
-                    height={10}
-                  />
-                {" "}
+                <Image
+                  className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
+                  src="/images/footer-image/footer5.jpg"
+                  alt=""
+                  width={1000}
+                  height={10}
+                />{" "}
               </SwiperSlide>
               <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
-              
-                  <Image
-                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
-                    src="/images/footer-image/footer5.jpg"
-                    alt=""
-                    width={1000}
-                    height={10}
-                  />
-                {" "}
+                <Image
+                  className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
+                  src="/images/footer-image/footer5.jpg"
+                  alt=""
+                  width={1000}
+                  height={10}
+                />{" "}
               </SwiperSlide>
               <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
-              
-                  <Image
-                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
-                    src="/images/footer-image/footer5.jpg"
-                    alt=""
-                    width={1000}
-                    height={10}
-                  />
-                {" "}
+                <Image
+                  className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
+                  src="/images/footer-image/footer5.jpg"
+                  alt=""
+                  width={1000}
+                  height={10}
+                />{" "}
               </SwiperSlide>
               <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
-              
-                  <Image
-                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
-                    src="/images/footer-image/footer5.jpg"
-                    alt=""
-                    width={1000}
-                    height={10}
-                  />
-                {" "}
+                <Image
+                  className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
+                  src="/images/footer-image/footer5.jpg"
+                  alt=""
+                  width={1000}
+                  height={10}
+                />{" "}
               </SwiperSlide>
               <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
-              
-                  <Image
-                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
-                    src="/images/footer-image/footer5.jpg"
-                    alt=""
-                    width={1000}
-                    height={10}
-                  />
-                {" "}
+                <Image
+                  className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
+                  src="/images/footer-image/footer5.jpg"
+                  alt=""
+                  width={1000}
+                  height={10}
+                />{" "}
               </SwiperSlide>
               <SwiperSlide className="flex justify-center overflow-hidden rounded-xl bg-[#17233E]">
-              
-                  <Image
-                    className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
-                    src="/images/footer-image/footer5.jpg"
-                    alt=""
-                    width={1000}
-                    height={10}
-                  />
-                {" "}
+                <Image
+                  className="image rounded-xl h-[100px] image-box  bg-[#17233E]"
+                  src="/images/footer-image/footer5.jpg"
+                  alt=""
+                  width={1000}
+                  height={10}
+                />{" "}
               </SwiperSlide>
             </Swiper>
             <div className="flex justify-center relative z-10 top-[-70%] md:top-[-60%] lg:top-[-70%] xl:top-[-60%] outline-[3px] outline-black   m-[2px]">
