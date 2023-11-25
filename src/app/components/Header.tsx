@@ -27,6 +27,15 @@ import RegisterForm from "./RegisterForm";
 
 const Header: React.FC = () => {
   const [login, setLogin] = useState(true);
+  const [changeBtn,setchangedBtn] = useState(false)
+  const [isLoggedIn, setLoggedIn] = useState(
+!!localStorage.getItem("accessToken")
+  );
+
+  const handleBtnChange = () =>{
+    setchangedBtn(!changeBtn)
+  }
+  console.log(changeBtn)
 
   const loginModel = (field: string) => {
     if (login === false && field === "login") {
@@ -35,6 +44,20 @@ const Header: React.FC = () => {
       setLogin(false);
     }
   };
+
+  const handleLogout = () => {
+    localStorage.removeItem("accessToken");
+    setLoggedIn(false);
+  };
+
+  const handleLogin = () => {
+    if(!!localStorage.getItem("accessToken")){
+      setLoggedIn(true);
+      window.alert('you are sucessfully sign in')
+    }
+  };
+
+
 
   return (
     <div className="">
@@ -556,17 +579,23 @@ const Header: React.FC = () => {
               icon={faBars}
               className="fa-Bars self-center h-[20px] "
             />
-            <div className="hidden xl:inline-flex items-center gap-2">
-              <span className="text-[#868686] mr-4 text-[15px]">
-                <PersonOutlineOutlinedIcon className="mb-[7px] " />
-                <a href="#my_modal_8" className="">
-                  LOGIN/REGISTER
-                </a>
-              </span>
-            </div>
+            {isLoggedIn ? (
+              <button className=" bg-[#029e9d] text-white border text-16px border-[#f1f1f1] rounded-xl  w-full model-btn"
+              onClick={handleLogout}>Logout</button>
+            ) : (
+              <div className="hidden xl:inline-flex items-center gap-2" onClick={handleLogin}>
+                <span className="text-[#868686] mr-4 text-[15px]">
+                  <PersonOutlineOutlinedIcon className="mb-[7px] " />
+                  <a href="#8" className="">
+                    LOGIN/REGISTER
+                  </a>
+                </span>
+              </div>
+            )}
+            {}
 
             {/* Put this part before </body> tag */}
-            <div className="modal " role="dialog" id="my_modal_8">
+            <div className="modal " role="dialog" id="8">
               <div className=" bg-white rounded-md p-[15px] w-[90%] md:w-[80%] lg:w-[60%]">
                 <div className="flex gap-3 w-full mb-[20px]">
                   <button
@@ -593,11 +622,11 @@ const Header: React.FC = () => {
 
                 {login ? (
                   <div className="duration-75">
-                    <LoginForm onChildClick={loginModel} />
+                    <LoginForm onChildClick={loginModel} handleBtnChange={handleBtnChange} />
                   </div>
                 ) : (
                   <div className="duration-75">
-                    <RegisterForm onChildClick={loginModel} />
+                    <RegisterForm onChildClick={loginModel}  />
                   </div>
                 )}
               </div>
